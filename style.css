@@ -1,3 +1,8 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url(Norse-Bold.otf);
+}
+
 .container {
   background-image: url("party.jpeg");
   height: 500px;
@@ -12,15 +17,70 @@
   margin: 10px;
 }
 
+#odin {
+  font-family: myFirstFont;
+  font-size: 70px;
+  color: white;
+  margin: 10px;
+}
+
 .box {
   background-color: rgba(0, 0, 0, 0.366);
   flex-grow: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
-p {
+.intro {
   font-size: large;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+form {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+  width: fit-content;
+  font-family: serif;
+  font-size: 10px;
+}
+h3 {
+  font-family: serif;
+}
+
+input {
+  border-color: #e5e7eb;
+  display: block;
+}
+
+label {
+  display: block;
+}
+
+input:focus {
+  border-color: blue;
+}
+
+.error {
+  border-color: red;
+}
+
+button {
+  padding: 5px;
+  background-color: rgb(23, 131, 130);
+  border-color: aliceblue;
+  border-radius: 6px;
+  color: aliceblue;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.end {
+  font-size: 15px;
+}
+
+.desc {
+  color: red;
 }

@@ -11,15 +11,17 @@
     <div class="container">
       <div class="box">
         <img class="logo" src="odin-lined.png" alt="" />
+        <div id="odin">ODIN</div>
       </div>
     </div>
-    <p>
+    <p class="intro">
       These are just filler words that is supposed to describe what you are
       signing up for. In this case I'm pretending that this is the sign-up form
       for Ngee Chong and my wedding party! I know you are keen!
     </p>
+    <h3>Sign up!</h3>
+
     <form action="example.com/path" method="post">
-      <h1>Let's do this!</h1>
       <div id="first name">
         <label for="first name">FIRST NAME</label>
         <input type="text" id="first name" name="first_name" />
@@ -29,7 +31,50 @@
         <label for="last name">LAST NAME</label>
         <input type="text" id="last name" name="last_name" />
       </div>
+
+      <div id="email">
+        <label for="email">EMAIL</label>
+        <input type="email" id="email" name="email" />
+      </div>
+
+      <div id="phone">
+        <label for="phone">PHONE</label>
+        <input type="tel" id="phone" name="phone" />
+      </div>
+
+      <div id="pwd">
+        <label for="password">PASSWORD</label>
+        <input type="password" id="password" name="password" />
+      </div>
+
+      <div id="cfm pwd">
+        <label for="cfm password">CONFIRM PASSWORD</label>
+        <input type="password" id="cfm password" name="cfm_password" />
+      </div>
+
+      <div class="button">
+        <button type="submit" onclick="checkPwd(event);">Create Account</button>
+
     </form>
-    <div>Login instead</div>
+    <p class="end">Already have an account? <a href="url">Log in</a></p>
+    <script>
+      function checkPwd(event) {
+        let pw1 = document.getElementById("password");
+        let pw2 = document.getElementById("cfm password");
+        console.log(pw2)
+        console.log(pw1)
+        if (pw1.value != pw2.value) {
+          pw1.classList.add("error");
+          pw2.classList.add("error");
+          let desc = document.createElement("div");
+          desc.innerText = 'Password do not match';
+          let parent = document.getElementById("pwd");
+          parent.appendChild(desc);
+          desc.classList.add("desc");
+          event.preventDefault();
+        }
+      }
+    </script>
   </body>
+  
 </html>
